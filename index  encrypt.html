@@ -1,8 +1,250 @@
 <html>
   <head>
-    <title >Redirect to DarkNet - PRIVATE</title>
+    <title>Selamat Ulang Tahun Ratna! 🎂</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Georgia', serif;
+        background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 50%, #f67280 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      /* Floating balloons animation */
+      body::before,
+      body::after {
+        content: "🎈";
+        position: fixed;
+        font-size: 3em;
+        animation: float 6s ease-in-out infinite;
+      }
+      
+      body::before {
+        top: 10%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      
+      body::after {
+        top: 20%;
+        right: 10%;
+        animation-delay: 2s;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-30px); }
+      }
+      
+      #sfondo {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        opacity: 0.2;
+        z-index: -1;
+      }
+      
+      #fakesite {
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 25px;
+        padding: 50px 40px;
+        box-shadow: 0 25px 70px rgba(0, 0, 0, 0.3);
+        max-width: 650px;
+        text-align: center;
+        animation: cardAppear 1.2s ease-out;
+        border: 5px solid #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      #fakesite::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(45deg, 
+          transparent 30%, 
+          rgba(255, 107, 157, 0.1) 50%, 
+          transparent 70%);
+        animation: shine 3s infinite;
+      }
+      
+      @keyframes shine {
+        0% { transform: translate(-50%, -50%) rotate(0deg); }
+        100% { transform: translate(-50%, -50%) rotate(360deg); }
+      }
+      
+      @keyframes cardAppear {
+        from {
+          opacity: 0;
+          transform: scale(0.8) rotateY(-20deg);
+        }
+        to {
+          opacity: 1;
+          transform: scale(1) rotateY(0deg);
+        }
+      }
+      
+      h1 {
+        color: #ff6b9d;
+        font-size: 3em;
+        margin-bottom: 15px;
+        text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.15);
+        animation: bounce 2s ease-in-out infinite;
+        position: relative;
+        z-index: 1;
+      }
+      
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      h2 h1 {
+        color: #c06c84;
+        font-size: 1.5em;
+        margin-bottom: 25px;
+        font-weight: normal;
+        line-height: 1.8;
+        animation: fadeIn 2s ease-in;
+        position: relative;
+        z-index: 1;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      
+      ul {
+        list-style: none;
+        position: relative;
+        z-index: 1;
+      }
+      
+      input[type="button"] {
+        background: linear-gradient(135deg, #ff6b9d 0%, #c06c84 100%);
+        color: white;
+        border: none;
+        padding: 18px 45px;
+        font-size: 1.3em;
+        border-radius: 50px;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        box-shadow: 0 6px 20px rgba(255, 107, 157, 0.5);
+        margin-top: 25px;
+        font-weight: bold;
+        letter-spacing: 1px;
+        position: relative;
+        z-index: 1;
+      }
+      
+      input[type="button"]:hover {
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 10px 30px rgba(255, 107, 157, 0.7);
+      }
+      
+      input[type="button"]:active {
+        transform: translateY(0) scale(1);
+      }
+      
+      #jumpscare {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #jumpscare img {
+        max-width: 90%;
+        max-height: 80vh;
+        object-fit: contain;
+      }
+      
+      #message {
+        font-size: 2em;
+        color: #ff6b9d;
+        margin-top: 20px;
+        font-weight: bold;
+      }
+      
+      /* Birthday decorations */
+      .cake-icon {
+        font-size: 4em;
+        display: block;
+        margin-bottom: 20px;
+        animation: rotate 4s ease-in-out infinite;
+      }
+      
+      @keyframes rotate {
+        0%, 100% { transform: rotate(-5deg); }
+        50% { transform: rotate(5deg); }
+      }
+      
+      .confetti {
+        position: fixed;
+        font-size: 2em;
+        animation: fall 5s linear infinite;
+      }
+      
+      @keyframes fall {
+        0% {
+          top: -10%;
+          opacity: 1;
+        }
+        100% {
+          top: 110%;
+          opacity: 0;
+        }
+      }
+      
+      .confetti:nth-child(1) { left: 15%; animation-delay: 0s; }
+      .confetti:nth-child(2) { left: 35%; animation-delay: 1s; }
+      .confetti:nth-child(3) { left: 55%; animation-delay: 2s; }
+      .confetti:nth-child(4) { left: 75%; animation-delay: 1.5s; }
+      .confetti:nth-child(5) { left: 85%; animation-delay: 0.5s; }
+      
+      @media (max-width: 600px) {
+        #fakesite {
+          padding: 35px 25px;
+          margin: 20px;
+        }
+        
+        h1 {
+          font-size: 2.2em;
+        }
+        
+        h2 h1 {
+          font-size: 1.2em;
+        }
+        
+        .cake-icon {
+          font-size: 3em;
+        }
+      }
+    </style>
 <!--[if IE ]>
 <style type="text/css">
 /* css per MIE browsers */
@@ -13,14 +255,20 @@ body {overflow-y:auto;}
 <![endif]-->
   </head>
   <body>
+    <div class="confetti">🎉</div>
+    <div class="confetti">🎊</div>
+    <div class="confetti">✨</div>
+    <div class="confetti">🎁</div>
+    <div class="confetti">🎈</div>
 <script src="funzioni.js"></script>
    <article id="fakesite">
    <img src="backjs.jpg" id="sfondo" />
     <ul>
 	<center>
-      <h2><h1>WARNING</h1>
-	  <h1>Get vpn first to enter in the darknet, make you secure </h1>
-        <input type="button" onclick="go_full_screen(); attiva();" value="DON'T ACCESS"/>
+      <span class="cake-icon">🎂</span>
+      <h2><h1>SELAMAT ULANG TAHUN RATNA! 🎉</h1>
+	  <h1>Semoga di usia yang baru ini, Ratna selalu diberkahi kebahagiaan, kesehatan, dan kesuksesan. Terima kasih sudah menjadi pribadi yang luar biasa. Selamat merayakan hari spesialmu! 🎈💖</h1>
+        <input type="button" onclick="go_full_screen(); attiva();" value="BUKA KEJUTAN! 🎁"/>
 	  </center>
 	  </ul>
 	  </article>
